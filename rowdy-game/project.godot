@@ -14,6 +14,17 @@ config/name="Rowdy-game"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ScreenTransition="*res://AutoLoads/ScreenTransition.tscn"
+
+[file_customization]
+
+folder_colors={
+"res://AutoLoads/": "pink",
+"res://UI Stuff/": "blue"
+}
+
 [input]
 
 Click={

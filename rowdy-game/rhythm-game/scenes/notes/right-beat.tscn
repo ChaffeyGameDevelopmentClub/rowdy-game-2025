@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btu0fjkld1xo5" path="res://rhythm-game/assets/temp assets/R.png" id="1_hrs0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew23s"]
-size = Vector2(12, 12)
+size = Vector2(16, 16)
 
 [node name="Right-beat" type="Node2D"]
 script = ExtResource("1_ew23s")
@@ -14,5 +14,5 @@ texture = ExtResource("1_hrs0n")
 
 [node name="Area2D" type="Area2D" parent="." groups=["right_beat"]]
 
-[node name="Hit" type="CollisionShape2D" parent="Area2D"]
+[node name="Hit" type="CollisionShape2D" parent="Area2D" groups=["right_beat"]]
 shape = SubResource("RectangleShape2D_ew23s")

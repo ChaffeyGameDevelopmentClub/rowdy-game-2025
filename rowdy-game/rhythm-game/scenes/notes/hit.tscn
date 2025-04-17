@@ -21,10 +21,11 @@ texture = ExtResource("1_043be")
 shape = SubResource("RectangleShape2D_q7dem")
 
 [node name="Too early" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Too early"]
 position = Vector2(10.5, 0)
 shape = SubResource("RectangleShape2D_w6ph1")
 
 [connection signal="area_entered" from="Hit" to="." method="_on_hit_area_entered"]
+[connection signal="area_exited" from="Hit" to="." method="_on_hit_area_exited"]
+[connection signal="area_entered" from="Too early" to="." method="_on_too_early_area_entered"]

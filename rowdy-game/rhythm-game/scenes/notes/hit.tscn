@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://7nnjf8rfy4es"]
+
+[ext_resource type="Texture2D" uid="uid://kjfnk141nenj" path="res://rhythm-game/assets/temp assets/HIT.png" id="1_043be"]
+[ext_resource type="Script" uid="uid://bdqflvnhlj870" path="res://rhythm-game/scenes/notes/hit.gd" id="1_q7dem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7dem"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6ph1"]
+size = Vector2(41, 20)
+
+[node name="Hit" type="Node2D"]
+script = ExtResource("1_q7dem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_043be")
+
+[node name="Hit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit"]
+shape = SubResource("RectangleShape2D_q7dem")
+
+[node name="Too early" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Too early"]
+position = Vector2(10.5, 0)
+shape = SubResource("RectangleShape2D_w6ph1")
+
+[connection signal="area_entered" from="Hit" to="." method="_on_hit_area_entered"]

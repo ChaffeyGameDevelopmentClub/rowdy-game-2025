@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5or2i2sce8hs"]
+
+[ext_resource type="Script" uid="uid://d3lvlbhtxgk5x" path="res://UI Stuff/InGame Menus/Main Menu/main_menu.gd" id="1_1a8cf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1a8cf")
+HubWorldPath = "res://test_scene.tscn"
+
+[node name="BackgroundContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleMargin" type="MarginContainer" parent="MenuContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 24
+
+[node name="TitleContainer" type="Control" parent="MenuContainer/TitleMargin"]
+layout_mode = 2
+
+[node name="TitleText" type="Label" parent="MenuContainer/TitleMargin/TitleContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Rowdy's game or smth idk"
+horizontal_alignment = 1
+
+[node name="MenuButtonsMargin" type="MarginContainer" parent="MenuContainer"]
+layout_mode = 2
+
+[node name="MenuButtonContainer" type="Control" parent="MenuContainer/MenuButtonsMargin"]
+layout_mode = 2
+
+[node name="MenuButtonBox" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -30.0
+offset_right = 160.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="StartGame" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonContainer/MenuButtonBox"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="QuitGame" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonContainer/MenuButtonBox"]
+layout_mode = 2
+text = "Quit Game"
+
+[node name="FlowControlContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="FlowControl" type="Control" parent="FlowControlContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="FlowControlContainer/FlowControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonContainer/MenuButtonBox/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonContainer/MenuButtonBox/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="FlowControlContainer/FlowControl/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bbfrxmds1luba"]
+
+[node name="RhythmGenerator" type="Node2D"]

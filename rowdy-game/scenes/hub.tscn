@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdlsdtv5urhuk"]
+
+[ext_resource type="Script" uid="uid://cq6pa1hmb42oi" path="res://scenes/hub.gd" id="1_qssp3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hcxm3"]
+size = Vector2(300, 200)
+
+[sub_resource type="ImageTexture" id="ImageTexture_hcxm3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qssp3")
+
+[node name="hub1" type="TextureButton" parent="."]
+offset_left = 127.0
+offset_top = 78.0
+offset_right = 427.0
+offset_bottom = 278.0
+texture_normal = SubResource("PlaceholderTexture2D_hcxm3")
+
+[node name="hub2" type="TextureButton" parent="."]
+offset_left = 665.0
+offset_top = 80.0
+offset_right = 965.0
+offset_bottom = 280.0
+texture_normal = SubResource("PlaceholderTexture2D_hcxm3")
+
+[node name="hub3" type="TextureButton" parent="."]
+offset_left = 665.0
+offset_top = 351.0
+offset_right = 965.0
+offset_bottom = 551.0
+texture_normal = SubResource("PlaceholderTexture2D_hcxm3")
+
+[node name="hub4" type="TextureButton" parent="."]
+offset_left = 131.0
+offset_top = 349.0
+offset_right = 431.0
+offset_bottom = 549.0
+texture_normal = SubResource("PlaceholderTexture2D_hcxm3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 256.0
+offset_bottom = 144.0
+scale = Vector2(4.5, 4.5)
+size_flags_stretch_ratio = 10.25
+texture = SubResource("ImageTexture_hcxm3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1000
+offset_right = 1155.0
+offset_bottom = 650.0
+color = Color(0.893787, 0.838603, 0.594546, 1)
+
+[connection signal="pressed" from="hub1" to="." method="_on_hub_1_pressed"]
+[connection signal="pressed" from="hub2" to="." method="_on_hub_2_pressed"]
+[connection signal="pressed" from="hub3" to="." method="_on_hub_3_pressed"]
+[connection signal="pressed" from="hub4" to="." method="_on_hub_4_pressed"]
